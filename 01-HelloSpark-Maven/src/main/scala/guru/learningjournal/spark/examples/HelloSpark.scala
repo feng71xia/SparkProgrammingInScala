@@ -10,7 +10,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 import scala.io.Source
 
 object HelloSpark extends Serializable {
-  @transient lazy val logger: Logger = Logger.getLogger(getClass.getName)
+  @transient private lazy val logger: Logger = Logger.getLogger(getClass.getName)
 
   def main(args: Array[String]): Unit = {
 
@@ -32,10 +32,11 @@ object HelloSpark extends Serializable {
       logger.info("Country: " + row.getString(0) + " Count: " + row.getLong(1))
     })
 
+
     logger.info(countDF.collect().mkString("->"))
 
     logger.info("Finished Hello Spark")
-    //scala.io.StdIn.readLine()
+    // scala.io.StdIn.readLine()
     spark.stop()
   }
 
@@ -53,7 +54,7 @@ object HelloSpark extends Serializable {
       .csv(dataFile)
   }
 
-  def getSparkAppConf: SparkConf = {
+  private def getSparkAppConf: SparkConf = {
     val sparkAppConf = new SparkConf
     //Set all Spark Configs
     val props = new Properties

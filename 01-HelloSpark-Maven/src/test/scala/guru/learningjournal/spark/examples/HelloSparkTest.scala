@@ -14,6 +14,7 @@ class HelloSparkTest extends FunSuite with BeforeAndAfterAll {
     spark = SparkSession.builder()
       .appName("HelloSparkTest")
       .master("local[3]")
+      .config("spark.driver.bindAddress","127.0.0.1")
       .getOrCreate()
   }
 

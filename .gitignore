@@ -12,3 +12,4 @@
 */metastore_db*
 */spark-warehouse*
 */output*
+**/.DS_Store

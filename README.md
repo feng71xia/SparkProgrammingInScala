@@ -24,4 +24,8 @@ I designed this course for software engineers willing to develop a Data Engineer
 This Course is using the Apache Spark 3.x. I have tested all the source code and examples used in this Course on Apache Spark 3.0.0 open-source distribution.
 </p>
 
+<p align="justify">
+JVM Options: -Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app-logs -Dlogfile.name=hello-spark
+</p>
+
 </div>
